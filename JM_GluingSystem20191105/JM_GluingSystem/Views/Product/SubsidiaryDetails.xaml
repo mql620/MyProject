@@ -1,0 +1,672 @@
+﻿<Window x:Class="JM_GluingSystem.Views.Product.SubsidiaryDetails"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:JM_GluingSystem.Views.Product"
+        mc:Ignorable="d"
+        Title="详情" Height="750" Width="1200" Closed="WindowClose" WindowStartupLocation="CenterScreen">
+    <Grid Background="White">
+        <Grid Margin="10 20">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="0.98*"/>
+                <ColumnDefinition Width="1.1*"/>
+                <!--<ColumnDefinition Width="1.1*"/>-->
+                <ColumnDefinition Width="1.22*"/>
+            </Grid.ColumnDefinitions>
+            <Border BorderBrush="#eee" BorderThickness="0 0 1 0" >
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <Border BorderBrush="#eee" BorderThickness="0 0 0 1" Width="320" Grid.Row="0">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="70"/>
+                                <ColumnDefinition/>
+                            </Grid.ColumnDefinitions>
+                            <Label Content="门ID：" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="18"/>
+                            <TextBlock HorizontalAlignment="Left" VerticalAlignment="Center" Width="250" FontSize="20" 
+                                       Name="DoorID" Grid.Column="1"/>
+                        </Grid>
+                    </Border>
+                    <Border BorderBrush="#eee" BorderThickness="0 0 0 1" Width="320" Grid.Row="1">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="85"/>
+                                <ColumnDefinition/>
+                            </Grid.ColumnDefinitions>
+                            <Label Content="门类型：" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="18"/>
+                            <TextBlock HorizontalAlignment="Left" VerticalAlignment="Center" Width="235" FontSize="20" 
+                                       Name="DoorMold" Grid.Column="1"/>
+                        </Grid>
+                    </Border>
+                    <Border BorderBrush="#eee" BorderThickness="0 0 0 1" Width="320" Grid.Row="2">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="100"/>
+                                <ColumnDefinition/>
+                            </Grid.ColumnDefinitions>
+                            <Label Content="订单编号：" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="18"/>
+                            <TextBlock HorizontalAlignment="Left" VerticalAlignment="Center" Width="220" FontSize="20" 
+                                       Name="OrderNum" Grid.Column="1"/>
+                        </Grid>
+                    </Border>
+                    <Border BorderBrush="#eee" BorderThickness="0 0 0 1" Width="320" Grid.Row="3">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="100"/>
+                                <ColumnDefinition/>
+                            </Grid.ColumnDefinitions>
+                            <Label Content="开合方向：" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="18"/>
+                            <TextBlock HorizontalAlignment="Left" VerticalAlignment="Center" Width="220" FontSize="20" 
+                                       Name="OpenDirection" Grid.Column="1"/>
+                        </Grid>
+                    </Border>
+                    <Border BorderBrush="#eee" BorderThickness="0 0 0 1" Width="320" Grid.Row="4">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="70"/>
+                                <ColumnDefinition/>
+                            </Grid.ColumnDefinitions>
+                            <Label Content="门厚：" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="18" Margin="5 0 0 0"/>
+                            <TextBlock HorizontalAlignment="Left" VerticalAlignment="Center" Width="250" FontSize="20" 
+                                       Name="Thickness" Grid.Column="3"/>
+                        </Grid>
+                    </Border>
+                    <Border BorderBrush="#eee" BorderThickness="0 0 0 1" Width="320" Grid.Row="5">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="110"/>
+                                <ColumnDefinition/>
+                            </Grid.ColumnDefinitions>
+                            <Label Content="薄板长/宽：" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="18"/>
+                            <TextBlock HorizontalAlignment="Left" VerticalAlignment="Center" Width="210" FontSize="20" 
+                                       Name="ThinPlateLengthWidth" Grid.Column="1"/>
+                        </Grid>
+                    </Border>
+                    <Border BorderBrush="#eee" BorderThickness="0 0 0 1" Width="320" Grid.Row="6">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="110"/>
+                                <ColumnDefinition/>
+                            </Grid.ColumnDefinitions>
+                            <Label Content="厚板长/宽：" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="18"/>
+                            <TextBlock HorizontalAlignment="Left" VerticalAlignment="Center" Width="210" FontSize="20" 
+                                       Name="ThickPlateLengthWidth" Grid.Column="1"/>
+                        </Grid>
+                    </Border>
+                    <Border BorderBrush="#eee" BorderThickness="0 0 0 1" Width="320" Grid.Row="7">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="100"/>
+                                <ColumnDefinition/>
+                            </Grid.ColumnDefinitions>
+                            <Label Content="上料时间：" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="18"/>
+                            <TextBlock HorizontalAlignment="Left" VerticalAlignment="Center" Width="220" FontSize="20" 
+                                       Name="FeedingTime" Grid.Column="1"/>
+                        </Grid>
+                    </Border>
+                    <Border BorderBrush="#eee" BorderThickness="0 0 0 1" Width="320" Grid.Row="8">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="100"/>
+                                <ColumnDefinition/>
+                            </Grid.ColumnDefinitions>
+                            <Label Content="下料时间：" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="18"/>
+                            <TextBlock HorizontalAlignment="Left" VerticalAlignment="Center" Width="220" FontSize="20" 
+                                       Name="BlankingTime" Grid.Column="1"/>
+                        </Grid>
+                    </Border>
+                    <Border BorderBrush="#eee" BorderThickness="0 0 0 1" Width="320" Grid.Row="9">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="100"/>
+                                <ColumnDefinition/>
+                            </Grid.ColumnDefinitions>
+                            <Label Content="覆膜用量：" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="18"/>
+                            <TextBlock HorizontalAlignment="Left" VerticalAlignment="Center" Width="220" FontSize="20" 
+                                       Name="LaminationDosage" Grid.Column="1"/>
+                        </Grid>
+                    </Border>
+                    <Border BorderBrush="#eee" BorderThickness="0 0 0 1" Width="320" Grid.Row="10">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="145"/>
+                                <ColumnDefinition/>
+                            </Grid.ColumnDefinitions>
+                            <Label Content="上膜/底膜余量：" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="18"/>
+                            <TextBlock HorizontalAlignment="Left" VerticalAlignment="Center" Width="175" FontSize="20" 
+                                       Name="Allowance" Grid.Column="1"/>
+                        </Grid>
+                    </Border>
+                    <Border BorderBrush="#eee" BorderThickness="0 0 0 1" Width="320" Grid.Row="11">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="145"/>
+                                <ColumnDefinition/>
+                            </Grid.ColumnDefinitions>
+                            <Label Content="裁切长度/宽度：" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="18"/>
+                            <TextBlock HorizontalAlignment="Left" VerticalAlignment="Center" Width="175" FontSize="20" 
+                                       Name="CuttingLengthWidth" Grid.Column="1"/>
+                        </Grid>
+                    </Border>
+                    <Border BorderBrush="#eee" BorderThickness="0 0 0 1" Width="320" Grid.Row="12">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="160"/>
+                                <ColumnDefinition/>
+                            </Grid.ColumnDefinitions>
+                            <Label Content="薄板锁孔坐标XY：" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="18"/>
+                            <TextBlock HorizontalAlignment="Left" VerticalAlignment="Center" Width="160" FontSize="20" 
+                                       Name="ThinPlateKeyholeXY" Grid.Column="1"/>
+                        </Grid>
+                    </Border>
+                    <Border BorderBrush="#eee" BorderThickness="0 0 0 1" Width="320" Grid.Row="13">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="160"/>
+                                <ColumnDefinition/>
+                            </Grid.ColumnDefinitions>
+                            <Label Content="厚板锁孔坐标XY：" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="18"/>
+                            <TextBlock HorizontalAlignment="Left" VerticalAlignment="Center" Width="160" FontSize="20" 
+                                       Name="ThickPlateKeyholeXY" Grid.Column="1"/>
+                        </Grid>
+                    </Border>
+                    <Border BorderBrush="#eee" BorderThickness="0 0 0 1" Width="320" Grid.Row="14">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="160"/>
+                                <ColumnDefinition/>
+                            </Grid.ColumnDefinitions>
+                            <Label Content="薄板猫眼坐标XY：" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="18"/>
+                            <TextBlock HorizontalAlignment="Left" VerticalAlignment="Center" Width="160" FontSize="20" 
+                                       Name="ThinPlateViewerXY" Grid.Column="1"/>
+                        </Grid>
+                    </Border>
+                    <Border BorderBrush="#eee" BorderThickness="0 0 0 1" Width="320" Grid.Row="15">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="160"/>
+                                <ColumnDefinition/>
+                            </Grid.ColumnDefinitions>
+                            <Label Content="厚板猫眼坐标XY：" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="18"/>
+                            <TextBlock HorizontalAlignment="Left" VerticalAlignment="Center" Width="160" FontSize="20" 
+                                       Name="ThickPlateViewerXY" Grid.Column="1"/>
+                        </Grid>
+                    </Border>
+                    <Border BorderBrush="#eee" BorderThickness="0 0 0 1" Width="320" Grid.Row="16">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="120"/>
+                                <ColumnDefinition/>
+                            </Grid.ColumnDefinitions>
+                            <Label Content="实际出胶量：" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="18"/>
+                            <TextBlock HorizontalAlignment="Left" VerticalAlignment="Center" Width="200" FontSize="20" 
+                                       Name="ActualSerlantVolume" Grid.Column="1"/>
+                        </Grid>
+                    </Border>
+                    <Border BorderBrush="#eee" BorderThickness="0 0 0 1" Width="320" Grid.Row="17">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="100"/>
+                                <ColumnDefinition/>
+                            </Grid.ColumnDefinitions>
+                            <Label Content="剩余胶量：" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="18"/>
+                            <TextBlock HorizontalAlignment="Left" VerticalAlignment="Center" Width="220" FontSize="20" 
+                                       Name="QuantityGlue" Grid.Column="1"/>
+                        </Grid>
+                    </Border>
+                    <Border BorderBrush="#eee" BorderThickness="0 0 0 1" Width="320" Grid.Row="18">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="100"/>
+                                <ColumnDefinition/>
+                            </Grid.ColumnDefinitions>
+                            <Label Content="涂胶时间：" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="18"/>
+                            <TextBlock HorizontalAlignment="Left" VerticalAlignment="Center" Width="220" FontSize="20" 
+                                       Name="GelatinizeTime" Grid.Column="1"/>
+                        </Grid>
+                    </Border>
+                </Grid>
+            </Border>
+            <Border BorderBrush="#eee" BorderThickness="0 0 1 0" Grid.Column="1">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <Border BorderBrush="#eee" BorderThickness="0 0 0 1" Width="360">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="140"/>
+                                <ColumnDefinition/>
+                            </Grid.ColumnDefinitions>
+                            <Label Content="覆膜入站时间：" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="18"/>
+                            <TextBlock HorizontalAlignment="Left" VerticalAlignment="Center" Width="220" FontSize="20" 
+                                       Name="LaminationPullInTime" Grid.Column="1"/>
+                        </Grid>
+                    </Border>
+                    <Border BorderBrush="#eee" BorderThickness="0 0 0 1" Width="360" Grid.Row="1">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="140"/>
+                                <ColumnDefinition/>
+                            </Grid.ColumnDefinitions>
+                            <Label Content="覆膜出站时间：" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="18" />
+                            <TextBlock HorizontalAlignment="Left" VerticalAlignment="Center" Width="220" FontSize="20" 
+                                       Name="LaminationPullOutTime" Grid.Column="1"/>
+                        </Grid>
+                    </Border>
+                    <Border BorderBrush="#eee" BorderThickness="0 0 0 1" Width="360" Grid.Row="2">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="140"/>
+                                <ColumnDefinition/>
+                            </Grid.ColumnDefinitions>
+                            <Label Content="涂胶入站时间：" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="18"/>
+                            <TextBlock HorizontalAlignment="Left" VerticalAlignment="Center" Width="220" FontSize="20" 
+                                       Name="GluingPullInTime" Grid.Column="1"/>
+                        </Grid>
+                    </Border>
+                    <Border BorderBrush="#eee" BorderThickness="0 0 0 1" Width="360" Grid.Row="3">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="140"/>
+                                <ColumnDefinition/>
+                            </Grid.ColumnDefinitions>
+                            <Label Content="涂胶出站时间：" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="18"/>
+                            <TextBlock HorizontalAlignment="Left" VerticalAlignment="Center" Width="220" FontSize="20" 
+                                       Name="GluingPullOutTime" Grid.Column="1"/>
+                        </Grid>
+                    </Border>
+                    <Border BorderBrush="#eee" BorderThickness="0 0 0 1" Width="360" Grid.Row="4">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="140"/>
+                                <ColumnDefinition/>
+                            </Grid.ColumnDefinitions>
+                            <Label Content="压合入站时间：" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="18"/>
+                            <TextBlock HorizontalAlignment="Left" VerticalAlignment="Center" Width="220" FontSize="20" 
+                                       Name="PressFitPullInTime" Grid.Column="1"/>
+                        </Grid>
+                    </Border>
+                    <Border BorderBrush="#eee" BorderThickness="0 0 0 1" Width="360" Grid.Row="5">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="140"/>
+                                <ColumnDefinition/>
+                            </Grid.ColumnDefinitions>
+                            <Label Content="压合出站时间：" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="18"/>
+                            <TextBlock HorizontalAlignment="Left" VerticalAlignment="Center" Width="220" FontSize="20" 
+                                       Name="PressFitPullOutTime" Grid.Column="1"/>
+                        </Grid>
+                    </Border>
+                    <Border BorderBrush="#eee" BorderThickness="0 0 0 1" Width="360" Grid.Row="6">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="100"/>
+                                <ColumnDefinition/>
+                            </Grid.ColumnDefinitions>
+                            <Label Content="压合温度：" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="18"/>
+                            <TextBlock HorizontalAlignment="Left" VerticalAlignment="Center" Width="260" FontSize="20" 
+                                       Name="PressFitTemperature" Grid.Column="1"/>
+                        </Grid>
+                    </Border>
+                    <Border BorderBrush="#eee" BorderThickness="0 0 0 1" Width="360" Grid.Row="7">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="140"/>
+                                <ColumnDefinition/>
+                            </Grid.ColumnDefinitions>
+                            <Label Content="打磨入站时间：" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="18"/>
+                            <TextBlock HorizontalAlignment="Left" VerticalAlignment="Center" Width="220" FontSize="20" 
+                                       Name="PolishedPullInTime" Grid.Column="1"/>
+                        </Grid>
+                    </Border>
+                    <Border BorderBrush="#eee" BorderThickness="0 0 0 1" Width="360" Grid.Row="8">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="140"/>
+                                <ColumnDefinition/>
+                            </Grid.ColumnDefinitions>
+                            <Label Content="打磨出站时间：" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="18"/>
+                            <TextBlock HorizontalAlignment="Left" VerticalAlignment="Center" Width="220" FontSize="20" 
+                                       Name="PolishedPullOutTime" Grid.Column="1"/>
+                        </Grid>
+                    </Border>
+                    <Border BorderBrush="#eee" BorderThickness="0 0 0 1" Width="360" Grid.Row="9">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="140"/>
+                                <ColumnDefinition/>
+                            </Grid.ColumnDefinitions>
+                            <Label Content="焊接入站时间：" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="18"/>
+                            <TextBlock HorizontalAlignment="Left" VerticalAlignment="Center" Width="220" FontSize="20" 
+                                       Name="WeldingPullInTime" Grid.Column="1"/>
+                        </Grid>
+                    </Border>
+                    <Border BorderBrush="#eee" BorderThickness="0 0 0 1" Width="360" Grid.Row="10">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="140"/>
+                                <ColumnDefinition/>
+                            </Grid.ColumnDefinitions>
+                            <Label Content="焊接出站时间：" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="18"/>
+                            <TextBlock HorizontalAlignment="Left" VerticalAlignment="Center" Width="220" FontSize="20" 
+                                       Name="WeldingPullOutTime" Grid.Column="1"/>
+                        </Grid>
+                    </Border>
+                    <Border BorderBrush="#eee" BorderThickness="0 0 0 1" Width="360" Grid.Row="11">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="100"/>
+                                <ColumnDefinition/>
+                            </Grid.ColumnDefinitions>
+                            <Label Content="焊接电压：" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="18"/>
+                            <TextBlock HorizontalAlignment="Left" VerticalAlignment="Center" Width="260" FontSize="20" 
+                                       Name="WeldingVoltage" Grid.Column="1"/>
+                        </Grid>
+                    </Border>
+                    <Border BorderBrush="#eee" BorderThickness="0 0 0 1" Width="360" Grid.Row="12">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="100"/>
+                                <ColumnDefinition/>
+                            </Grid.ColumnDefinitions>
+                            <Label Content="焊接电流：" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="18"/>
+                            <TextBlock HorizontalAlignment="Left" VerticalAlignment="Center" Width="260" FontSize="20" 
+                                       Name="WeldingElectricity" Grid.Column="1"/>
+                        </Grid>
+                    </Border>
+                    <Border BorderBrush="#eee" BorderThickness="0 0 0 1" Width="360" Grid.Row="13">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="100"/>
+                                <ColumnDefinition/>
+                            </Grid.ColumnDefinitions>
+                            <Label Content="焊接时间：" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="18"/>
+                            <TextBlock HorizontalAlignment="Left" VerticalAlignment="Center" Width="260" FontSize="20" 
+                                       Name="WeldingSpendTime" Grid.Column="1"/>
+                        </Grid>
+                    </Border>
+                    <Border BorderBrush="#eee" BorderThickness="0 0 0 1" Width="360" Grid.Row="14">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="100"/>
+                                <ColumnDefinition/>
+                            </Grid.ColumnDefinitions>
+                            <Label Content="送丝速度：" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="18"/>
+                            <TextBlock HorizontalAlignment="Left" VerticalAlignment="Center" Width="260" FontSize="20" 
+                                       Name="WireFeedRate" Grid.Column="1"/>
+                        </Grid>
+                    </Border>
+                    <Border BorderBrush="#eee" BorderThickness="0 0 0 1" Width="360" Grid.Row="15">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="130"/>
+                                <ColumnDefinition/>
+                            </Grid.ColumnDefinitions>
+                            <Label Content="珍珠岩长/宽：" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="18"/>
+                            <TextBlock HorizontalAlignment="Left" VerticalAlignment="Center" Width="230" FontSize="20" 
+                                       Name="PerliteLengthWidth" Grid.Column="1"/>
+                        </Grid>
+                    </Border>
+                    <Border BorderBrush="#eee" BorderThickness="0 0 0 1" Width="360" Grid.Row="16">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="100"/>
+                                <ColumnDefinition/>
+                            </Grid.ColumnDefinitions>
+                            <Label Content="珍珠岩厚：" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="18"/>
+                            <TextBlock HorizontalAlignment="Left" VerticalAlignment="Center" Width="260" FontSize="20" 
+                                       Name="PerliteThickness" Grid.Column="1"/>
+                        </Grid>
+                    </Border>
+                    <Border BorderBrush="#eee" BorderThickness="0 0 0 1" Width="360" Grid.Row="17">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="140"/>
+                                <ColumnDefinition/>
+                            </Grid.ColumnDefinitions>
+                            <Label Content="产品检测结果：" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="18"/>
+                            <TextBlock HorizontalAlignment="Left" VerticalAlignment="Center" Width="220" FontSize="20" 
+                                       Name="VisualInspectionResult" Grid.Column="1"/>
+                        </Grid>
+                    </Border>
+                    <Border BorderBrush="#eee" BorderThickness="0 0 0 1" Width="360" Grid.Row="18">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="140"/>
+                                <ColumnDefinition/>
+                            </Grid.ColumnDefinitions>
+                            <Label Content="锁具长/宽：" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="18"/>
+                            <TextBlock HorizontalAlignment="Left" VerticalAlignment="Center" Width="220" FontSize="20" 
+                                       Name="LockLengthWidth" Grid.Column="1"/>
+                        </Grid>
+                    </Border>
+                </Grid>
+            </Border>
+            <Border BorderBrush="#eee" BorderThickness="0" Grid.Column="2">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <Border BorderBrush="#eee" BorderThickness="0 0 0 1" Width="400">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="190"/>
+                                <ColumnDefinition/>
+                            </Grid.ColumnDefinitions>
+                            <Label Content="珍珠岩填充入站时间：" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="18"/>
+                            <TextBlock HorizontalAlignment="Left" VerticalAlignment="Center" Width="210" FontSize="20" 
+                                       Name="PerliteFillingPullInTime" Grid.Column="1"/>
+                        </Grid>
+                    </Border>
+                    <Border BorderBrush="#eee" BorderThickness="0 0 0 1" Width="400" Grid.Row="1">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="190"/>
+                                <ColumnDefinition/>
+                            </Grid.ColumnDefinitions>
+                            <Label Content="珍珠岩填充出站时间：" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="18"/>
+                            <TextBlock HorizontalAlignment="Left" VerticalAlignment="Center" Width="210" FontSize="20" 
+                                       Name="PerliteFillingPullOutTime" Grid.Column="1"/>
+                        </Grid>
+                    </Border>
+                    <Border BorderBrush="#eee" BorderThickness="0 0 0 1" Width="400" Grid.RowSpan="2" Grid.Row="2">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="150"/>
+                                <ColumnDefinition/>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition/>
+                                <RowDefinition/>
+                            </Grid.RowDefinitions>
+                            <Label Content="焊点间距-上下：" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="18"/>
+                            <TextBlock HorizontalAlignment="Left" VerticalAlignment="Top" Width="250"  FontSize="20" 
+                                       Name="WeldSpacingUpDownStr" Grid.Column="1" Grid.RowSpan="2" TextWrapping="Wrap" Height="67"/>
+                        </Grid>
+                    </Border>
+                    <Border BorderBrush="#eee" BorderThickness="0 0 0 1" Width="400" Grid.RowSpan="3" Grid.Row="4">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="150"/>
+                                <ColumnDefinition/>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition/>
+                                <RowDefinition/>
+                                <RowDefinition/>
+                            </Grid.RowDefinitions>
+                            <Label Content="焊点间距-铰链：" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="18"/>
+                            <TextBlock HorizontalAlignment="Left" VerticalAlignment="Top" Width="250" FontSize="20" 
+                                       Name="WeldSpacingHingeStr" Grid.Column="1" Grid.RowSpan="3" TextWrapping="Wrap" Height="100"/>
+                        </Grid>
+                    </Border>
+                    <Border BorderBrush="#eee" BorderThickness="0 0 0 1" Width="400" Grid.RowSpan="3" Grid.Row="7">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="150"/>
+                                <ColumnDefinition/>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition/>
+                                <RowDefinition/>
+                                <RowDefinition/>
+                            </Grid.RowDefinitions>
+                            <Label Content="焊点间距-锁孔：" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="18"/>
+                            <TextBlock HorizontalAlignment="Left" VerticalAlignment="Top" Width="250" FontSize="20" 
+                                       Name="WeldSpacingKeyholeStr" Grid.Column="1" Grid.RowSpan="3" TextWrapping="Wrap" Height="100"/>
+                        </Grid>
+                    </Border>
+                    <Border BorderBrush="#eee" BorderThickness="0 0 0 1" Width="400" Grid.Row="10">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="150"/>
+                                <ColumnDefinition/>
+                            </Grid.ColumnDefinitions>
+                            <Label Content="焊点个数-上下：" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="18"/>
+                            <TextBlock HorizontalAlignment="Left" VerticalAlignment="Center" Width="250" FontSize="20" 
+                                       Name="WeldNumUpDown" Grid.Column="1"/>
+                        </Grid>
+                    </Border>
+                    <Border BorderBrush="#eee" BorderThickness="0 0 0 1" Width="400" Grid.Row="11">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="150"/>
+                                <ColumnDefinition/>
+                            </Grid.ColumnDefinitions>
+                            <Label Content="焊点个数-铰链：" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="18"/>
+                            <TextBlock HorizontalAlignment="Left" VerticalAlignment="Center" Width="250" FontSize="20" 
+                                       Name="WeldNumHinge" Grid.Column="1"/>
+                        </Grid>
+                    </Border>
+                    <Border BorderBrush="#eee" BorderThickness="0 0 0 1" Width="400" Grid.Row="12">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="150"/>
+                                <ColumnDefinition/>
+                            </Grid.ColumnDefinitions>
+                            <Label Content="焊点个数-锁孔：" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="18"/>
+                            <TextBlock HorizontalAlignment="Left" VerticalAlignment="Center" Width="250" FontSize="20" 
+                                       Name="WeldNumKeyhole" Grid.Column="1"/>
+                        </Grid>
+                    </Border>
+                    <Border BorderBrush="#eee" BorderThickness="0 0 0 1" Width="400" Grid.Row="13">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="190"/>
+                                <ColumnDefinition/>
+                            </Grid.ColumnDefinitions>
+                            <Label Content="喷漆除烟痕入站时间：" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="18"/>
+                            <TextBlock HorizontalAlignment="Left" VerticalAlignment="Center" Width="210" FontSize="20" 
+                                       Name="SprayPaintPullInTime" Grid.Column="1"/>
+                        </Grid>
+                    </Border>
+                    <Border BorderBrush="#eee" BorderThickness="0 0 0 1" Width="400" Grid.Row="14">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="190"/>
+                                <ColumnDefinition/>
+                            </Grid.ColumnDefinitions>
+                            <Label Content="喷漆除烟痕出站时间：" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="18"/>
+                            <TextBlock HorizontalAlignment="Left" VerticalAlignment="Center" Width="210" FontSize="20" 
+                                       Name="SprayPaintPullOutTime" Grid.Column="1"/>
+                        </Grid>
+                    </Border>
+                    <Border BorderBrush="#eee" BorderThickness="0 0 0 1" Width="400" Grid.Row="15">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="170"/>
+                                <ColumnDefinition/>
+                            </Grid.ColumnDefinitions>
+                            <Label Content="喷漆/除烟痕时间：" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="18"/>
+                            <TextBlock HorizontalAlignment="Left" VerticalAlignment="Center" Width="230" FontSize="20" 
+                                       Name="SprayPaintSpendTime" Grid.Column="1"/>
+                        </Grid>
+                    </Border>
+                    <Border BorderBrush="#eee" BorderThickness="0 0 0 1" Width="400" Grid.Row="16">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="180"/>
+                                <ColumnDefinition/>
+                            </Grid.ColumnDefinitions>
+                            <Label Content="视觉检测入站时间：" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="18"/>
+                            <TextBlock HorizontalAlignment="Left" VerticalAlignment="Center" Width="220" FontSize="20" 
+                                       Name="VisualInspectionPullInTime" Grid.Column="1"/>
+                        </Grid>
+                    </Border>
+                    <Border BorderBrush="#eee" BorderThickness="0 0 0 1" Width="400" Grid.Row="17">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="180"/>
+                                <ColumnDefinition/>
+                            </Grid.ColumnDefinitions>
+                            <Label Content="视觉检测出站时间：" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="18"/>
+                            <TextBlock HorizontalAlignment="Left" VerticalAlignment="Center" Width="220" FontSize="20" 
+                                       Name="VisualInspectionPullOutTime" Grid.Column="1"/>
+                        </Grid>
+                    </Border>
+                    <Border BorderBrush="#eee" BorderThickness="0" Width="400" Grid.Row="18">
+                        <Label Content="* 焊点间距数值为微米级，其他为毫米级！" HorizontalAlignment="Right" VerticalAlignment="Center" FontSize="14" Foreground="Red"/>
+                    </Border>
+                </Grid>
+            </Border>
+        </Grid>
+    </Grid>
+</Window>

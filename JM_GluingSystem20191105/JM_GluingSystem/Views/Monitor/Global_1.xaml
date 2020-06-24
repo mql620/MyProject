@@ -1,0 +1,422 @@
+﻿<UserControl x:Class="JM_GluingSystem.Views.Monitor.Global"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:lvc="clr-namespace:LiveCharts.Wpf;assembly=LiveCharts.Wpf"
+             mc:Ignorable="d" 
+             d:DesignHeight="805" d:DesignWidth="1522">
+    <Grid Background="#fff">
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="550"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Row="0">
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition Height="150"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+
+            <Grid Grid.Row="0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="300"/>
+                    <ColumnDefinition Width="300"/>
+                    <ColumnDefinition Width="300"/>
+                    <ColumnDefinition Width="300"/>
+                    <ColumnDefinition Width="300"/>
+                </Grid.ColumnDefinitions>
+
+                <Border BorderThickness="1" Height="160" Width="260" Grid.Row="0" BorderBrush="#ffffff"  Background="#ffffff"
+                    VerticalAlignment="Bottom" HorizontalAlignment="Center" Margin="0" CornerRadius="15" Grid.Column="0">
+                    <Border.Effect>
+                        <DropShadowEffect BlurRadius="15" Direction="-90" RenderingBias="Quality" ShadowDepth="2" Color="#eee"/>
+                    </Border.Effect>
+
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="30"/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition Height="10"/>
+                        </Grid.RowDefinitions>
+                        <Label VerticalAlignment="Center" Height="30" Content="上料站" FontSize="17" HorizontalAlignment="Center" Grid.Row="0"/>
+                        <Label Content="门ID：" FontSize="16" VerticalAlignment="Center" Margin="10,0,0,0" HorizontalAlignment="Left" Width="100" Height="30" Foreground="#000" Grid.Row="1" />
+                        <Border Width="150" CornerRadius="5" Height="30" Margin="94,4.667,24,4.667" BorderThickness="1" BorderBrush="#efefef" Background="#efefef" Grid.Row="1">
+                            <TextBox Padding="1 3 0 0" Foreground="#333" Height="30" Width="139" Background="{x:Null}" BorderThickness="0" FontSize="16" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="-0.333,-1.333,0,-0.667"/>
+                        </Border>
+
+                        <Label Content="门类型：" FontSize="16" VerticalAlignment="Center" Margin="10,0,0,0" HorizontalAlignment="Left" Width="100" Height="30" Foreground="#000" Grid.Row="2" />
+                        <Border Width="150" CornerRadius="5" Height="30" Margin="94,5.333,24,4.667" BorderThickness="1" BorderBrush="#efefef" Background="#efefef" Grid.Row="2">
+                            <TextBox Padding="1 3 0 0" Foreground="#333" Height="30" Width="139" Background="{x:Null}" BorderThickness="0" FontSize="16" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="-0.333,-1.333,0,-0.667"/>
+                        </Border>
+
+                        <Label Content="门扇参数：" FontSize="16" VerticalAlignment="Center" Margin="10,0,0,0" HorizontalAlignment="Left" Width="100" Height="30" Foreground="#000" Grid.Row="3" />
+                        <Border Width="150" CornerRadius="5" Height="30" Margin="94,4.333,24,5" BorderThickness="1" BorderBrush="#efefef" Background="#efefef" Grid.Row="3">
+                            <TextBox Padding="1 3 0 0" Foreground="#333" Height="30" Width="139" Background="{x:Null}" BorderThickness="0" FontSize="16" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="-0.333,-1.333,0,-0.667"/>
+                        </Border>
+                    </Grid>
+                </Border>
+
+                <Border BorderThickness="1" Height="160" Width="260" Grid.Column="1" BorderBrush="#ffffff"  Background="#ffffff"
+                    VerticalAlignment="Bottom" HorizontalAlignment="Center" Margin="0" CornerRadius="15">
+                    <Border.Effect>
+                        <DropShadowEffect BlurRadius="15" Direction="-90" RenderingBias="Quality" ShadowDepth="2" Color="#efefef"/>
+                    </Border.Effect>
+
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="30"/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition Height="10"/>
+                        </Grid.RowDefinitions>
+                        <Label VerticalAlignment="Center" Height="30" Content="涂胶站" FontSize="17" HorizontalAlignment="Center" Grid.Row="0"/>
+                        <Label Content="门ID：" FontSize="16" VerticalAlignment="Center" Margin="10,0,0,0" HorizontalAlignment="Left" Width="100" Height="30" Foreground="#000" Grid.Row="1" />
+                        <Border CornerRadius="5" Height="30" Margin="98,4.667,16,4.667" BorderThickness="1" BorderBrush="#efefef" Background="#efefef" Grid.Row="1">
+                            <TextBox Padding="1 3 0 0" Foreground="#333" Height="30" Width="133" Background="{x:Null}" BorderThickness="0" FontSize="16" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="-0.333,-1.333,0,-0.667"/>
+                        </Border>
+
+                        <Label Content="门类型：" FontSize="16" VerticalAlignment="Center" Margin="10,0,0,0" HorizontalAlignment="Left" Width="100" Height="30" Foreground="#000" Grid.Row="2" />
+                        <Border CornerRadius="5" Height="30" Margin="98,5.333,16,4.667" BorderThickness="1" BorderBrush="#efefef" Background="#efefef" Grid.Row="2">
+                            <TextBox Padding="0 3 0 0" Foreground="#333" Height="30" Width="146" Background="{x:Null}" BorderThickness="0" FontSize="16" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="-3,-1,-1,-1"/>
+                        </Border>
+
+                        <!--<Label Content="门类型：" FontSize="16" VerticalAlignment="Center" Margin="10,0,0,0" HorizontalAlignment="Left" Width="100" Height="30" Foreground="#000" Grid.Row="3" />
+                        <Border Width="60" CornerRadius="5" Height="30" Margin="103,4.333,215,5" BorderThickness="1" BorderBrush="#efefef" Background="#efefef" Grid.Row="3">
+                            <TextBox Padding="1 3 0 0" Foreground="#333" Height="30" Width="60" Background="{x:Null}" BorderThickness="0" FontSize="16" HorizontalAlignment="Left" VerticalAlignment="Center" />
+                        </Border>
+                        <Label Content="涂胶速度：" FontSize="16" VerticalAlignment="Center" Margin="206,4.333,0,5" HorizontalAlignment="Left" Width="100" Height="30" Foreground="#000" Grid.Row="3" />
+                        <Border Width="60" CornerRadius="5" Height="30" Margin="300,4.333,18,5" BorderThickness="1" BorderBrush="#efefef" Background="#efefef" Grid.Row="3">
+                            <TextBox Padding="1 3 0 0" Foreground="#333" Height="30" Width="60" Background="{x:Null}" BorderThickness="0" FontSize="16" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="-0.333,-1.333,-1.667,-0.667"/>
+                        </Border>-->
+                    </Grid>
+                </Border>
+                <Border BorderThickness="1" Height="160" Width="260" Grid.Column="2" BorderBrush="#ffffff"  Background="#ffffff"
+                    VerticalAlignment="Bottom" HorizontalAlignment="Center" Margin="0" CornerRadius="15" >
+                    <Border.Effect>
+                        <DropShadowEffect BlurRadius="15" Direction="-90" RenderingBias="Quality" ShadowDepth="2" Color="#eee"/>
+                    </Border.Effect>
+
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="30"/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition Height="10"/>
+                        </Grid.RowDefinitions>
+                        <Label VerticalAlignment="Center" Height="30" Content="打磨站" FontSize="17" HorizontalAlignment="Center" Grid.Row="0"/>
+                        <Label Content="门ID：" FontSize="16" VerticalAlignment="Center" Margin="10,0,0,0" HorizontalAlignment="Left" Width="100" Height="30" Foreground="#000" Grid.Row="1" />
+                        <Border CornerRadius="5" Height="30" Margin="98,4.667,16,4.667" BorderThickness="1" BorderBrush="#efefef" Background="#efefef" Grid.Row="1">
+                            <TextBox Padding="1 3 0 0" Foreground="#333" Height="30" Width="143" Background="{x:Null}" BorderThickness="0" FontSize="16" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="-0.333,-1.333,-0.667,-0.667"/>
+                        </Border>
+
+                        <Label Content="门类型：" FontSize="16" VerticalAlignment="Center" Margin="10,0,0,0" HorizontalAlignment="Left" Width="100" Height="30" Foreground="#000" Grid.Row="2" />
+                        <Border CornerRadius="5" Height="30" Margin="98,5.333,16,4.667" BorderThickness="1" BorderBrush="#efefef" Background="#efefef" Grid.Row="2">
+                            <TextBox Padding="0 3 0 0" Foreground="#333" Height="30" Width="146" Background="{x:Null}" BorderThickness="0" FontSize="16" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="-3.333,-1.333,-0.667,-0.667"/>
+                        </Border>
+
+                        <!--<Label Content="打磨速度：" FontSize="16" VerticalAlignment="Center" Margin="10,0,0,0" HorizontalAlignment="Left" Width="100" Height="30" Foreground="#000" Grid.Row="3" />
+                        <Border CornerRadius="5" Height="30" Margin="98,5.333,16,4.667" BorderThickness="1" BorderBrush="#efefef" Background="#efefef" Grid.Row="3">
+                            <TextBox Padding="0 3 0 0" Foreground="#333" Height="30" Width="236" Background="{x:Null}" BorderThickness="0" FontSize="16" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="-3.333,-1.333,-0.667,-0.667"/>
+                        </Border>-->
+                    </Grid>
+                </Border>
+
+                <Border BorderThickness="1" Height="160" Width="260" Grid.Column="3" BorderBrush="#ffffff"  Background="#ffffff"
+                    VerticalAlignment="Bottom" HorizontalAlignment="Center" Margin="0" CornerRadius="15">
+                    <Border.Effect>
+                        <DropShadowEffect BlurRadius="15" Direction="-90" RenderingBias="Quality" ShadowDepth="2" Color="#eee"/>
+                    </Border.Effect>
+
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="30"/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition Height="10"/>
+                        </Grid.RowDefinitions>
+                        <Label VerticalAlignment="Center" Height="30" Content="喷漆站" FontSize="17" HorizontalAlignment="Center" Grid.Row="0"/>
+                        <Label Content="门ID：" FontSize="16" VerticalAlignment="Center" Margin="10,0,0,0" HorizontalAlignment="Left" Width="100" Height="30" Foreground="#000" Grid.Row="1" />
+                        <Border CornerRadius="5" Height="30" Margin="98,4.667,16,4.667" BorderThickness="1" BorderBrush="#efefef" Background="#efefef" Grid.Row="1">
+                            <TextBox Padding="1 3 0 0" Foreground="#333" Height="30"  Width="143" Background="{x:Null}" BorderThickness="0" FontSize="16" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="-0.333,-1.333,-0.667,-0.667"/>
+                        </Border>
+
+                        <Label Content="门类型：" FontSize="16" VerticalAlignment="Center" Margin="10,0,0,0" HorizontalAlignment="Left" Width="100" Height="30" Foreground="#000" Grid.Row="2" />
+                        <Border CornerRadius="5" Height="30" Margin="98,5.333,16,4.667" BorderThickness="1" BorderBrush="#efefef" Background="#efefef" Grid.Row="2">
+                            <TextBox Padding="0 3 0 0" Foreground="#333" Height="30" Width="146" Background="{x:Null}" BorderThickness="0" FontSize="16" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="-3.333,-1.333,-0.667,-0.667"/>
+                        </Border>
+
+                        <!--<Label Content="喷漆时间：" FontSize="16" VerticalAlignment="Center" Margin="10,0,0,0" HorizontalAlignment="Left" Width="100" Height="30" Foreground="#000" Grid.Row="3" />
+                        <Border Width="60" CornerRadius="5" Height="30" Margin="98,4.333,190,5" BorderThickness="1" BorderBrush="#efefef" Background="#efefef" Grid.Row="3">
+                            <TextBox Padding="1 3 0 0" Foreground="#333" Height="30" Width="60" Background="{x:Null}" BorderThickness="0" FontSize="16" HorizontalAlignment="Left" VerticalAlignment="Center" />
+                        </Border>
+                        <Label Content="喷漆速度：" FontSize="16" VerticalAlignment="Center" Margin="182,4.333,0,5" HorizontalAlignment="Left" Width="100" Height="30" Foreground="#000" Grid.Row="3" />
+                        <Border Width="60" CornerRadius="5" Height="30" Margin="272,4.333,16,5" BorderThickness="1" BorderBrush="#efefef" Background="#efefef" Grid.Row="3">
+                            <TextBox Padding="1 3 0 0" Foreground="#333" Height="30" Width="60" Background="{x:Null}" BorderThickness="0" FontSize="16" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="-0.333,-1.333,-1.667,-0.667"/>
+                        </Border>-->
+                    </Grid>
+                </Border>
+                <Border BorderThickness="1" Height="160" Width="260" Grid.Row="0" BorderBrush="#ffffff"  Background="#ffffff"
+                    VerticalAlignment="Bottom" HorizontalAlignment="Center" Margin="0" CornerRadius="15" Grid.Column="4" >
+                    <Border.Effect>
+                        <DropShadowEffect BlurRadius="15" Direction="-90" RenderingBias="Quality" ShadowDepth="2" Color="#eee"/>
+                    </Border.Effect>
+
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="30"/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition Height="10"/>
+                        </Grid.RowDefinitions>
+                        <Label VerticalAlignment="Center" Height="30" Content="下料站" FontSize="17" HorizontalAlignment="Center" Grid.Row="0"/>
+                        <Label Content="门ID：" FontSize="16" VerticalAlignment="Center" Margin="10,0,0,0" HorizontalAlignment="Left" Width="100" Height="30" Foreground="#000" Grid.Row="1" />
+                        <Border Width="180" CornerRadius="5" Height="30" Margin="94,4.667,24,4.667" BorderThickness="1" BorderBrush="#efefef" Background="#efefef" Grid.Row="1">
+                            <TextBox Padding="1 3 0 0" Foreground="#333" Height="30" Width="138" Background="{x:Null}" BorderThickness="0" FontSize="16" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="-0.333,-1.333,0,-0.667"/>
+                        </Border>
+
+                        <Label Content="门类型：" FontSize="16" VerticalAlignment="Center" Margin="10,0,0,0" HorizontalAlignment="Left" Width="100" Height="30" Foreground="#000" Grid.Row="2" />
+                        <Border Width="180" CornerRadius="5" Height="30" Margin="94,5.333,24,4.667" BorderThickness="1" BorderBrush="#efefef" Background="#efefef" Grid.Row="2">
+                            <TextBox Padding="1 3 0 0" Foreground="#333" Height="30" Width="136" Background="{x:Null}" BorderThickness="0" FontSize="16" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="-0.333,-1.333,0,-0.667"/>
+                        </Border>
+                    </Grid>
+                </Border>
+            </Grid>
+            <Grid Grid.Row="1">
+                <!--<Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="300"/>
+                    <ColumnDefinition Width="300"/>
+                    <ColumnDefinition Width="300"/>
+                    <ColumnDefinition Width="600"/>
+                </Grid.ColumnDefinitions>-->
+                <Image Source="..\..\Resources\Images\ProcessBg.png" Margin="24,10,38,10"/>
+            </Grid>
+            <Grid Grid.Row="2">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="300"/>
+                    <ColumnDefinition Width="300"/>
+                    <ColumnDefinition Width="300"/>
+                    <ColumnDefinition Width="600"/>
+                </Grid.ColumnDefinitions>
+                <Border BorderThickness="1" Height="160" Width="260" Grid.Column="0" BorderBrush="#ffffff"  Background="#ffffff"
+                    VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0" CornerRadius="15">
+                    <Border.Effect>
+                        <DropShadowEffect BlurRadius="15" Direction="-90" RenderingBias="Quality" ShadowDepth="2" Color="#eee"/>
+                    </Border.Effect>
+
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="30"/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition Height="10"/>
+                        </Grid.RowDefinitions>
+                        <Label VerticalAlignment="Center" Height="30" Content="覆膜站" FontSize="17" HorizontalAlignment="Center" Grid.Row="0"/>
+                        <Label Content="门ID：" FontSize="16" VerticalAlignment="Center" Margin="10,0,0,0" HorizontalAlignment="Left" Width="100" Height="30" Foreground="#000" Grid.Row="1" />
+                        <Border CornerRadius="5" Height="30" Margin="98,4.667,16,4.667" BorderThickness="1" BorderBrush="#efefef" Background="#efefef" Grid.Row="1">
+                            <TextBox Padding="1 3 0 0" Foreground="#333" Height="30"  Width="143" Background="{x:Null}" BorderThickness="0" FontSize="16" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="-0.333,-1.333,-0.667,-0.667"/>
+                        </Border>
+
+                        <Label Content="门类型：" FontSize="16" VerticalAlignment="Center" Margin="10,0,0,0" HorizontalAlignment="Left" Width="100" Height="30" Foreground="#000" Grid.Row="2" />
+                        <Border CornerRadius="5" Height="30" Margin="98,5.333,16,4.667" BorderThickness="1" BorderBrush="#efefef" Background="#efefef" Grid.Row="2">
+                            <TextBox Padding="0 3 0 0" Foreground="#333" Height="30" Width="146" Background="{x:Null}" BorderThickness="0" FontSize="16" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="-3.333,-1.333,-0.667,-0.667"/>
+                        </Border>
+                    </Grid>
+                </Border>
+
+                <Border BorderThickness="1" Height="160" Width="260" Grid.Column="1" BorderBrush="#ffffff"  Background="#ffffff"
+                    VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0" CornerRadius="15">
+                    <Border.Effect>
+                        <DropShadowEffect BlurRadius="15" Direction="-90" RenderingBias="Quality" ShadowDepth="2" Color="#eee"/>
+                    </Border.Effect>
+
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="30"/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition Height="10"/>
+                        </Grid.RowDefinitions>
+                        <Label VerticalAlignment="Center" Height="30" Content="防火门珍珠岩填充站" FontSize="17" HorizontalAlignment="Center" Margin="0 0 0 0" Grid.Row="0"/>
+                        <Label Content="门ID：" FontSize="16" VerticalAlignment="Center" Margin="10,0,0,0" HorizontalAlignment="Left" Width="100" Height="30" Foreground="#000" Grid.Row="1" />
+                        <Border CornerRadius="5" Height="30" Margin="98,4.667,16,4.667" BorderThickness="1" BorderBrush="#efefef" Background="#efefef" Grid.Row="1">
+                            <TextBox Padding="1 3 0 0" Foreground="#333" Height="30"  Width="143" Background="{x:Null}" BorderThickness="0" FontSize="16" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="-0.333,-1.333,-0.667,-0.667"/>
+                        </Border>
+                        <Label Content="门类型：" FontSize="16" VerticalAlignment="Center" Margin="10,0,0,0" HorizontalAlignment="Left" Width="100" Height="30" Foreground="#000" Grid.Row="2" />
+                        <Border CornerRadius="5" Height="30" Margin="98,5.333,16,4.667" BorderThickness="1" BorderBrush="#efefef" Background="#efefef" Grid.Row="2">
+                            <TextBox Padding="0 3 0 0" Foreground="#333" Height="30" Width="146" Background="{x:Null}" BorderThickness="0" FontSize="16" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="-3.333,-1.333,-0.667,-0.667"/>
+                        </Border>
+                    </Grid>
+                </Border>
+
+                <Border BorderThickness="1" Height="160" Width="260" Grid.Column="2" BorderBrush="#ffffff"  Background="#ffffff"
+                    VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0" CornerRadius="15" >
+                    <Border.Effect>
+                        <DropShadowEffect BlurRadius="15" Direction="-90" RenderingBias="Quality" ShadowDepth="2" Color="#eee"/>
+                    </Border.Effect>
+
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="30"/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition Height="10"/>
+                        </Grid.RowDefinitions>
+                        <Label VerticalAlignment="Center" Height="30" Content="焊接站" FontSize="17" HorizontalAlignment="Center" Grid.Row="0"/>
+                        <Label Content="门ID：" FontSize="16" VerticalAlignment="Center" Margin="10,0,0,0" HorizontalAlignment="Left" Width="100" Height="30" Foreground="#000" Grid.Row="1" />
+                        <Border Width="180" CornerRadius="5" Height="30" Margin="94,4.667,24,4.667" BorderThickness="1" BorderBrush="#efefef" Background="#efefef" Grid.Row="1">
+                            <TextBox Padding="1 3 0 0" Foreground="#333" Height="30" Width="138" Background="{x:Null}" BorderThickness="0" FontSize="16" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="-0.333,-1.333,0,-0.667"/>
+                        </Border>
+                        <Label Content="门类型：" FontSize="16" VerticalAlignment="Center" Margin="10,0,0,0" HorizontalAlignment="Left" Width="100" Height="30" Foreground="#000" Grid.Row="2" />
+                        <Border Width="180" CornerRadius="5" Height="30" Margin="94,4.667,24,4.667" BorderThickness="1" BorderBrush="#efefef" Background="#efefef" Grid.Row="2">
+                            <TextBox Padding="1 3 0 0" Foreground="#333" Height="30"  Width="138" Background="{x:Null}" BorderThickness="0" FontSize="16" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="-0.333,-1.333,0,-0.667"/>
+                        </Border>
+                        <!--<Label Content="焊接间隔：" FontSize="16" VerticalAlignment="Center" Margin="10,0,0,0" HorizontalAlignment="Left" Width="100" Height="30" Foreground="#000" Grid.Row="3" />
+                        <Border Width="180" CornerRadius="5" Height="30" Margin="94,4.667,24,4.667" BorderThickness="1" BorderBrush="#efefef" Background="#efefef" Grid.Row="3">
+                            <TextBox Padding="1 3 0 0" Foreground="#333" Height="30" Width="180" Background="{x:Null}" BorderThickness="0" FontSize="16" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                        </Border>-->
+                    </Grid>
+                </Border>
+                <Border BorderThickness="1" Height="160" Width="570" BorderBrush="#ffffff"  Background="#ffffff"
+                    VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0" CornerRadius="15" Grid.Column="3">
+                    <Border.Effect>
+                        <DropShadowEffect BlurRadius="15" Direction="-90" RenderingBias="Quality" ShadowDepth="2" Color="#eee"/>
+                    </Border.Effect>
+
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="30"/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition Height="10"/>
+                        </Grid.RowDefinitions>
+                        <Label VerticalAlignment="Center" Height="30" Content="视觉检测站" FontSize="17" HorizontalAlignment="Center" Margin="0 0 0 0" Grid.Row="0"/>
+                        <Label Content="门ID：" FontSize="16" VerticalAlignment="Center" Margin="10,0,0,0" HorizontalAlignment="Left" Width="100" Height="30" Foreground="#000" Grid.Row="1" />
+                        <Border CornerRadius="5" Height="30" Margin="104,5,326,4.333" BorderThickness="1" BorderBrush="#efefef" Background="#efefef" Grid.Row="1">
+                            <TextBox Padding="1 3 0 0" Foreground="#333" Height="30" Width="137" Background="{x:Null}" BorderThickness="0" FontSize="16" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="-0.333,-1.333,-0.667,-0.667"/>
+                        </Border>
+
+                        <Label Content="门类型：" FontSize="16" VerticalAlignment="Center" Margin="10,0,0,0" HorizontalAlignment="Left" Width="100" Height="30" Foreground="#000" Grid.Row="2" />
+                        <Border CornerRadius="5" Height="30" Margin="104,4.667,326,4.667" BorderThickness="1" BorderBrush="#efefef" Background="#efefef" Grid.Row="2">
+                            <TextBox Padding="1 3 0 0" Foreground="#333" Height="30" Width="138" Background="{x:Null}" BorderThickness="0" FontSize="16" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                        </Border>
+
+                        <Label Content="检测结果：" FontSize="16" VerticalAlignment="Center" Margin="10,0,0,0" HorizontalAlignment="Left" Width="100" Height="30" Foreground="#000" Grid.Row="3" />
+                        <Border CornerRadius="5" Height="30" Margin="104,4.333,326,5" BorderThickness="1" BorderBrush="#efefef" Background="#efefef" Grid.Row="3">
+                            <TextBox Padding="1 3 0 0" Foreground="#333" Height="30" Width="137" Background="{x:Null}" BorderThickness="0" FontSize="16" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="-0.333,-1.333,0,-0.667"/>
+                        </Border>
+                        <Label Content="检测图片：" FontSize="16" VerticalAlignment="Center" Margin="305,5,0,4.333" HorizontalAlignment="Left" Width="120" Height="30" Foreground="#000" Grid.Row="1" />
+                        <Border CornerRadius="5" Margin="400,0,30,10" BorderThickness="1" Width="138" BorderBrush="#efefef" Background="#efefef" Grid.Row="1" Grid.RowSpan="3"/>
+                    </Grid>
+                </Border>
+
+                <!--<Border BorderThickness="1" Height="160" Width="570" Grid.Column="4" BorderBrush="#ffffff"  Background="#ffffff"
+                    VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0" CornerRadius="15">
+                    <Border.Effect>
+                        <DropShadowEffect BlurRadius="15" Direction="-90" RenderingBias="Quality" ShadowDepth="2" Color="#eee"/>
+                    </Border.Effect>
+
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition Height="10"/>
+                        </Grid.RowDefinitions>
+                        
+                        -->
+                <!--<Label Content="焊丝残留：" FontSize="16" VerticalAlignment="Center" Margin="10,0,0,0" HorizontalAlignment="Left" Width="100" Height="30" Foreground="#000" Grid.Row="0" />
+                        <Border Width="60" CornerRadius="5" Height="30" Margin="103,4,215,3.333" BorderThickness="1" BorderBrush="#efefef" Background="#efefef" Grid.Row="0">
+                            <TextBox Padding="1 3 0 0" Foreground="#333" Height="30" Width="60" Background="{x:Null}" BorderThickness="0" FontSize="16" HorizontalAlignment="Left" VerticalAlignment="Center" />
+                        </Border>
+                        <Label Content="扣板左右错位：" FontSize="16" VerticalAlignment="Center" Margin="172,3,0,4.333" HorizontalAlignment="Left" Width="120" Height="30" Foreground="#000" Grid.Row="0" />
+                        <Border Width="60" CornerRadius="5" Height="30" Margin="297,4,21,3.333" BorderThickness="1" BorderBrush="#efefef" Background="#efefef" Grid.Row="0">
+                            <TextBox Padding="1 3 0 0" Foreground="#333" Height="30" Width="60" Background="{x:Null}" BorderThickness="0" FontSize="16" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="-0.333,-1.333,-1.667,-0.667"/>
+                        </Border>
+
+                        <Label Content="焊穿：" FontSize="16" VerticalAlignment="Center" Margin="10,0,0,0" HorizontalAlignment="Left" Width="100" Height="30" Foreground="#000" Grid.Row="1" />
+                        <Border Width="60" CornerRadius="5" Height="30" Margin="103,4.667,215,2.667" BorderThickness="1" BorderBrush="#efefef" Background="#efefef" Grid.Row="1">
+                            <TextBox Padding="1 3 0 0" Foreground="#333" Height="30" Width="60" Background="{x:Null}" BorderThickness="0" FontSize="16" HorizontalAlignment="Left" VerticalAlignment="Center" />
+                        </Border>
+                        <Label Content="扣板上下错位：" FontSize="16" VerticalAlignment="Center" Margin="172,3.667,0,3.667" HorizontalAlignment="Left" Width="120" Height="30" Foreground="#000" Grid.Row="1" />
+                        <Border Width="60" CornerRadius="5" Height="30" Margin="297,4.667,21,2.667" BorderThickness="1" BorderBrush="#efefef" Background="#efefef" Grid.Row="1">
+                            <TextBox Padding="1 3 0 0" Foreground="#333" Height="30" Width="60" Background="{x:Null}" BorderThickness="0" FontSize="16" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="-0.333,-1.333,-1.667,-0.667"/>
+                        </Border>
+
+                        <Label Content="焊点过大：" FontSize="16" VerticalAlignment="Center" Margin="10,0,0,0" HorizontalAlignment="Left" Width="100" Height="30" Foreground="#000" Grid.Row="2" />
+                        <Border Width="60" CornerRadius="5" Height="30" Margin="103,4.333,215,3" BorderThickness="1" BorderBrush="#efefef" Background="#efefef" Grid.Row="2">
+                            <TextBox Padding="1 3 0 0" Foreground="#333" Height="30" Width="60" Background="{x:Null}" BorderThickness="0" FontSize="16" HorizontalAlignment="Left" VerticalAlignment="Center" />
+                        </Border>
+                        <Label Content="门面正确扣合：" FontSize="16" VerticalAlignment="Center" Margin="172,3.333,0,4" HorizontalAlignment="Left" Width="120" Height="30" Foreground="#000" Grid.Row="2" />
+                        <Border Width="60" CornerRadius="5" Height="30" Margin="297,4.333,21,3" BorderThickness="1" BorderBrush="#efefef" Background="#efefef" Grid.Row="2">
+                            <TextBox Padding="1 3 0 0" Foreground="#333" Height="30" Width="60" Background="{x:Null}" BorderThickness="0" FontSize="16" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="-0.333,-1.333,-1.667,-0.667"/>
+                        </Border>
+
+                        <Label Content="焊缝过大：" FontSize="16" VerticalAlignment="Center" Margin="10,0,0,0" HorizontalAlignment="Left" Width="100" Height="30" Foreground="#000" Grid.Row="3" />
+                        <Border Width="60" CornerRadius="5" Height="30" Margin="103,4,215,3.333" BorderThickness="1" BorderBrush="#efefef" Background="#efefef" Grid.Row="3">
+                            <TextBox Padding="1 3 0 0" Foreground="#333" Height="30" Width="60" Background="{x:Null}" BorderThickness="0" FontSize="16" HorizontalAlignment="Left" VerticalAlignment="Center" />
+                        </Border>
+                        <Label Content="门扇偏出模板：" FontSize="16" VerticalAlignment="Center" Margin="172,3,0,4.333" HorizontalAlignment="Left" Width="125" Height="30" Foreground="#000" Grid.Row="3" />
+                        <Border Width="60" CornerRadius="5" Height="30" Margin="297,4,21,3.333" BorderThickness="1" BorderBrush="#efefef" Background="#efefef" Grid.Row="3">
+                            <TextBox Padding="1 3 0 0" Foreground="#333" Height="30" Width="60" Background="{x:Null}" BorderThickness="0" FontSize="16" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="-0.333,-1.333,-1.667,-0.667"/>
+                        </Border>-->
+                <!--
+                    </Grid>
+                </Border>-->
+            </Grid>
+
+        </Grid>
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="300*"/>
+                <ColumnDefinition Width="700*"/>
+                <ColumnDefinition Width="400*"/>
+            </Grid.ColumnDefinitions>
+            <Grid>
+                <Button Name="_btn" Width="180" Visibility="Visible" Height="180" HorizontalAlignment="Center" Template="{DynamicResource ButtonControlTemplate}" Cursor="Hand"  Margin="0" RenderTransformOrigin="0.507,0.547" >
+                    <Button.Resources>
+                        <ControlTemplate x:Key="ButtonControlTemplate" TargetType="{x:Type Button}">
+                            <Grid>
+
+                                <Ellipse x:Name="ButtonEllipse" Width="Auto" Height="Auto" StrokeThickness="2" Fill="#fff" Stroke="Gray"></Ellipse>
+                                <Image Stretch="Fill" Source="..\..\Resources\Images\start.png" Width="180" Height="180" HorizontalAlignment="Center"/>
+                                <!--<Polygon x:Name="ButtonPolygon" Stretch="Fill"  Stroke="Gray" StrokeThickness="1">
+                                    <Polygon.Fill>
+                                        <SolidColorBrush Color="Red" Opacity="0.4"/>
+                                    </Polygon.Fill>
+                                </Polygon>-->
+                            </Grid>
+                        </ControlTemplate>
+                    </Button.Resources>
+                </Button>
+            </Grid>
+            <Grid Grid.Column="1">
+                <lvc:CartesianChart x:Name="ColumnChart" AnimationsSpeed="0:0:0.5" Series="{Binding ColumnSeries}" LegendLocation="Top" FontSize="17">
+                    <lvc:CartesianChart.AxisX>
+                        <lvc:Axis x:Name="ColumnX" Title="前一周生产统计" FontSize="17"/>
+                    </lvc:CartesianChart.AxisX>
+                    <lvc:CartesianChart.AxisY>
+                        <lvc:Axis FontSize="17"/>
+                    </lvc:CartesianChart.AxisY>
+                </lvc:CartesianChart>
+            </Grid>
+            <Grid Grid.Column="2">
+                <lvc:PieChart LegendLocation="Top" x:Name="PieChart" Series="{Binding PieSeries}" FontSize="17" Margin="28,0,50.667,23.333">
+                </lvc:PieChart>
+            </Grid>
+        </Grid>
+    </Grid>
+</UserControl>

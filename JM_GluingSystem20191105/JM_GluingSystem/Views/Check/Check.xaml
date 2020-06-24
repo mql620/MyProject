@@ -1,0 +1,137 @@
+﻿<UserControl x:Class="JM_GluingSystem.Views.Check.Check"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:JM_GluingSystem.Views"
+             xmlns:my="clr-namespace:JM_GluingSystem.Common.Css"
+             xmlns:lvc="clr-namespace:LiveCharts.Wpf;assembly=LiveCharts.Wpf"
+             mc:Ignorable="d" 
+             d:DesignHeight="805" d:DesignWidth="1522">
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="../../Common/Css/DataGridCss.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+            <!--combobox样式触发-->
+            <Style TargetType="ComboBox">
+                <Setter Property="FontSize" Value="11"/>
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate TargetType="ComboBox">
+                            <Grid>
+                                <ToggleButton Focusable="false" IsChecked="{Binding Path=IsDropDownOpen,Mode=TwoWay,
+                                    RelativeSource={RelativeSource TemplatedParent}}" Height="30" VerticalAlignment="Top" >
+                                    <ToggleButton.Template>
+                                        <ControlTemplate>
+                                            <Grid>
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width="5*" />
+                                                    <ColumnDefinition Width="*" />
+                                                </Grid.ColumnDefinitions>
+                                                <Border x:Name="Border"  Grid.ColumnSpan="2" BorderBrush="Gray" BorderThickness="1" CornerRadius="5"/>
+                                                <Path x:Name="Arrow" Grid.Column="1"  Fill="DarkGray" HorizontalAlignment="Center" 
+                                                      VerticalAlignment="Center" Data="M 0 0 L 4 4 L 8 0 Z"/>
+                                            </Grid>
+                                            <ControlTemplate.Triggers>
+                                                <Trigger Property="ToggleButton.IsMouseOver" Value="true">
+                                                    <Setter TargetName="Border" Property="Background" Value="White" />
+                                                </Trigger>
+                                                <Trigger Property="ToggleButton.IsChecked" Value="true">
+                                                    <Setter TargetName="Border" Property="Background" Value="White" />
+                                                </Trigger>
+                                            </ControlTemplate.Triggers>
+                                        </ControlTemplate>
+                                    </ToggleButton.Template>
+                                </ToggleButton>
+                                <ContentPresenter Name="ContentSite" IsHitTestVisible="False"  Content="{TemplateBinding SelectionBoxItem}" 
+                                                  ContentTemplate="{TemplateBinding SelectionBoxItemTemplate}" 
+                                                  ContentTemplateSelector="{TemplateBinding ItemTemplateSelector}" Margin="3"  />
+                                <TextBox x:Name="PART_EditableTextBox" Visibility="Hidden" IsReadOnly="{TemplateBinding IsReadOnly}"/>
+                                <Popup Name="Popup" Placement="Bottom" IsOpen="{TemplateBinding IsDropDownOpen}" AllowsTransparency="True"  
+                                       Focusable="False" PopupAnimation="Slide">
+                                    <Grid  Name="DropDown" SnapsToDevicePixels="True" MinWidth="{TemplateBinding ActualWidth}" 
+                                           MaxHeight="{TemplateBinding MaxDropDownHeight}">
+                                        <Border x:Name="DropDownBorder" Background="LightSteelBlue" />
+                                        <ScrollViewer SnapsToDevicePixels="True">
+                                            <StackPanel IsItemsHost="True" />
+                                        </ScrollViewer>
+                                    </Grid>
+                                </Popup>
+                            </Grid>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+            </Style>
+            <!--button样式触发-->
+            <Style x:Key="searchButtonStyle" TargetType="{x:Type Button}">
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate TargetType="{x:Type Button}">
+                            <Border Background="{TemplateBinding Background}" BorderThickness="0" CornerRadius="5">
+                                <Grid>
+                                    <TextBlock Grid.Column="1" Text="{TemplateBinding Content}" HorizontalAlignment="Center" 
+                                               VerticalAlignment="Center" TextAlignment="Center"/>
+                                </Grid>
+                            </Border>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+            </Style>
+        </ResourceDictionary>
+    </UserControl.Resources>
+    <Grid Background="White">
+        <Border BorderBrush="Gray" BorderThickness="0">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="60"/>
+                    <RowDefinition Height="390"/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Grid Grid.Row="0">
+                    <Label Content="时间：" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="10,12,0,12" Width="61" FontSize="20"/>
+                    <DatePicker HorizontalAlignment="Left" VerticalAlignment="Center" Margin="88,12,0,14" Width="150" Name="DatePicker1" DisplayDateEnd="{Binding SelectedDate,ElementName=DatePicker2}" Height="34" FontSize="18"/>
+                    <Label Content="至" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="257,12,0,12" Width="35" FontSize="20"/>
+                    <DatePicker HorizontalAlignment="Left" VerticalAlignment="Center" Margin="309,12,0,14" Width="150" Name="DatePicker2" DisplayDateStart="{Binding SelectedDate,ElementName=DatePicker1}" Height="34" FontSize="18"/>
+                    <Button Content="结果查询" Margin="500,0,0,0" Width="100" Height="36" FontSize="18" Background="#000" Foreground="White" Style="{StaticResource searchButtonStyle}" Name="SearchWorkInfoBtn" Click="SearchWorkInfoBtn_Click"
+                            VerticalAlignment="Center" HorizontalAlignment="Left"/>
+                    <my:DataGridPage x:Name="CheckInfo_Page" Margin="0,0,0,0" VerticalAlignment="Center" HorizontalAlignment="Right"/>
+                    <Button Content="详情" Margin="580,5,705.303,13" Width="90" Height="36" FontSize="18" Background="#000" Foreground="White" Style="{StaticResource searchButtonStyle}" Name="testDetailsInfo" Click="TestDetailsInfoBtn_Click"
+                            VerticalAlignment="Bottom" HorizontalAlignment="Center"/>
+                </Grid>
+                <DataGrid Name="CheckInfo_DgSource" AutoGenerateColumns="False" IsReadOnly="True" CanUserSortColumns="False" AlternationCount="2" Background="White" Margin="3,0" Grid.Row="1">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Width="*" Header="门ID" Binding="{Binding DoorID}"/>
+                        <DataGridTextColumn Width="*" Header="门类型" Binding="{Binding DoorMold}"/>
+                        <DataGridTextColumn Width="*" Header="订单编号" Binding="{Binding OrderNum}"/>
+                        <DataGridTextColumn Width="*" Header="检测时间" Binding="{Binding TestingTime}"/>
+                        <DataGridTextColumn Width="*" Header="产品检测结果" Binding="{Binding Result}"/>
+                    </DataGrid.Columns>
+                </DataGrid>
+                <lvc:CartesianChart Grid.Row="3" x:Name="mychart" AnimationsSpeed="0:0:0.5" >
+                    <lvc:CartesianChart.AxisX>
+                        <lvc:Axis x:Name="myaxis"/>
+                    </lvc:CartesianChart.AxisX>
+                    <lvc:CartesianChart.AxisY>
+                        <lvc:Axis Title="NUM" FontSize="14"></lvc:Axis>
+                    </lvc:CartesianChart.AxisY>
+                    <lvc:CartesianChart.DataTooltip>
+                        <lvc:DefaultTooltip x:Name="mytootip"/>
+                    </lvc:CartesianChart.DataTooltip>
+                    <lvc:CartesianChart.Series>
+                        <lvc:LineSeries Title="扣板左右错位" Name="BuckleDislocation_LeftAndRightLine" Values="{Binding BuckleDislocation_LeftAndRight}" LineSmoothness="1" Stroke="Red"/>
+                        <lvc:LineSeries Title="扣板上下错位" Name="BuckleDislocation_TopAndBottomLine" Values="{Binding BuckleDislocation_TopAndBottom}" LineSmoothness="1" Stroke="Orange"/>
+                        <lvc:LineSeries Title="门面正确扣合" Name="RightFitLine" Values="{Binding RightFit}" LineSmoothness="1" Stroke="Yellow"/>
+                        <lvc:LineSeries Title="门扇偏出模板" Name="WideTemplateLine" Values="{Binding WideTemplate}" LineSmoothness="1" Stroke="Green"/>
+                        <lvc:LineSeries Title="焊丝残留" Name="WireResidualLine" Values="{Binding WireResidual}" LineSmoothness="1" Stroke="Blue"/>
+                        <lvc:LineSeries Title="焊穿" Name="MeltThroughLine" Values="{Binding MeltThrough}" LineSmoothness="1" Stroke="Indigo"/>
+                        <lvc:LineSeries Title="焊点过大" Name="SolderJointOversizeLine" Values="{Binding SolderJointOversize}" LineSmoothness="1" Stroke="Violet"/>
+                        <lvc:LineSeries Title="焊缝过大" Name="WeldJointOversizeLine" Values="{Binding WeldJointOversize}" LineSmoothness="1" Stroke="Pink"/>
+                    </lvc:CartesianChart.Series>
+                </lvc:CartesianChart>
+            </Grid>
+        </Border>
+        <Border HorizontalAlignment="Left" Height="802" VerticalAlignment="Top" Background="WhiteSmoke" Opacity="0.5" 
+                Visibility="Hidden" Name="borderBody"/>
+    </Grid>
+</UserControl>

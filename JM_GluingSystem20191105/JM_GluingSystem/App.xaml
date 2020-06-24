@@ -1,0 +1,9 @@
+﻿<Application x:Class="JM_GluingSystem.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:JM_GluingSystem"
+             StartupUri="/Views/Login.xaml">
+    <Application.Resources>
+         
+    </Application.Resources>
+</Application>

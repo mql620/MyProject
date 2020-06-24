@@ -3517,5 +3517,9 @@ namespace JM_GluingSystem.Views
         {
             public string Name { get; set; }
         }
+        public class Test
+        {
+            public int Id { get; set; }
+        }
     }
 }
